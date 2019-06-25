@@ -3,6 +3,9 @@ import React from 'react';
 
 import Auth from '../components/Auth/Auth';
 import Home from '../components/Home/Home';
+import Inventory from '../components/Inventory/Inventory';
+import Orders from '../components/Orders/Orders';
+import NewOrder from '../components/NewOrder/NewOrder';
 
 import fbConnection from '../helpers/data/connections';
 
