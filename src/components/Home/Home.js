@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Home.scss';
 
-class Auth extends React.Component {
+class Home extends React.Component {
   render() {
     return (
             <div className="Home">
@@ -12,4 +12,4 @@ class Auth extends React.Component {
   }
 }
 
-export default { Auth };
+export default Home;
