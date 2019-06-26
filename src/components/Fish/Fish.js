@@ -2,12 +2,12 @@ import React from 'react';
 
 import './Fish.scss';
 import format from '../../helpers/format';
-import fishShapes from '../../helpers/propz/fishShapes';
+import fishShape from '../../helpers/propz/fishShapes';
 
 
 class Fish extends React.Component {
     static propTypes = {
-      fish: fishShapes.fishShape,
+      fish: fishShape.fishShape,
     }
 
     render() {
