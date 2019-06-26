@@ -3,10 +3,8 @@ import firebase from 'firebase/app';
 
 import Auth from '../components/Auth/Auth';
 import Home from '../components/Home/Home';
-import Inventory from '../components/Inventory/Inventory';
-import Orders from '../components/Orders/Orders';
-import NewOrder from '../components/NewOrder/NewOrder';
 import MyNavbar from '../components/MyNavabar/MyNavbar';
+
 
 import fbConnection from '../helpers/data/connections';
 
@@ -35,13 +33,15 @@ class App extends React.Component {
     const { authed } = this.state;
     const loadComponent = () => {
       if (authed) {
-        return <Home />;
+        return (
+          <Home />
+        );
       }
       return <Auth />;
     };
     return (
     <div className="App">
-      <MyNavbar authed={this.state.authed} />
+      <MyNavbar authed={authed} />
       {loadComponent()}
     </div>
     );
