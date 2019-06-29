@@ -25,6 +25,7 @@ class Fish extends React.Component {
         <p>{fish.desc}</p>
         <button
           disabled={!isAvailable}
+          onClick={this.addClickEvent}
         >
           {isAvailable ? 'Add To Order' : 'Sold Out!'}
         </button>
