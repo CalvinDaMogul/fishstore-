@@ -36,6 +36,12 @@ class Home extends React.Component {
       .catch(err => console.error('error with delete request', err));
   }
 
+  addFishToOrder = (fishId) => {
+    const fishOrderCopy = { ...this.state.fishOrder };
+    fishOrderCopy[fishId] = fishOrderCopy[fishId] + 1 || 1;
+    this.setState({ fishOrder: fishOrderCopy });
+  }
+
   render() {
     const { fishes, orders } = this.state;
     return (
