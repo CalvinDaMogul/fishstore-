@@ -14,17 +14,27 @@ class OrderRow extends React.Component {
     const { order, deleteOrder } = this.props;
     e.preventDefault();
     deleteOrder(order.id);
-  };
+  }
+
+  selecetOrder = (e) => {
+    e.preventDefault();
+    const { order, selectOrderToEdit } = this.props;
+    selectOrderToEdit(order.id);
+  }
 
   render() {
     const { order } = this.props;
     const numFish = Object.values(order.fishes).reduce((a, b) => a + b);
     return (
       <tr>
-        <th>{order.name}</th>
-        <td>{moment(order.dateTime).format('LLL')}</td>
+        <th>
+        <button className="link-button" onClick={this.selectOrder}>{order.name}</button>
+        </th>
+        <td>{moment(order.date).format('LLL')}</td>
         <td>{numFish}</td>
-        <td><button className="btn btn-danger" onClick={this.deleteOrderEvent}>X</button></td>
+        <th>
+        <button className="btn btn-danger" onClick={this.deleteOrderEvent}>x</button>
+        </th>
       </tr>
     );
   }
