@@ -1,12 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Fish from '../Fish/Fish';
 
 import './Inventory.scss';
+import fishShapes from '../../helpers/propz/fishShapes';
 
 class Inventory extends React.Component {
+  static propTypes = {
+    fish: PropTypes.arrayOf(fishShapes.orderShape),
+    addFishToOrder: PropTypes.func.isRequired,
+  }
+
   render() {
     const fishComponents = this.props.fishes.map(fish => (
-            <Fish key={fish.id} fish={fish}/>
+            <Fish key={fish.id} fish={fish} addFishToOrder={this.props.addFishToOrder} />
     ));
     return (
             <div className="Inventory">
